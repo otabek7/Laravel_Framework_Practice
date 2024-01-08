@@ -14,8 +14,8 @@ use App\Http\Controllers\TodoListController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');//dont want logic to be in the web.php file, thus move it to a CONTROLLER METHOD
-});
+Route::get('/', [TodoListController::class, 'index']);
+    //return view('welcome'); dont want logic to be in the web.php file, thus move it to a CONTROLLER METHOD
+
 
 Route::post('/saveItemRoute',[TodoListController::class, 'saveItem'])->name('saveItem');
